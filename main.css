@@ -1,0 +1,194 @@
+@-webkit-keyframes rainbow {
+  0% {
+    background-color: #ff2400;
+  }
+  6% {
+    background-color: #e81d1d;
+  }
+  10% {
+    background-color: #e8b71d;
+  }
+  23% {
+    background-color: #e3e81d;
+  }
+  42% {
+    background-color: #1de840;
+  }
+  55% {
+    background-color: #1ddde8;
+  }
+  70% {
+    background-color: #2b1de8;
+  }
+  85% {
+    background-color: #dd00f3;
+  }
+  100% {
+    background-color: #2b1de8;
+  }
+}
+
+@keyframes rainbow {
+  0% {
+    background-color: #ff2400;
+  }
+  6% {
+    background-color: #e81d1d;
+  }
+  10% {
+    background-color: #e8b71d;
+  }
+  23% {
+    background-color: #e3e81d;
+  }
+  42% {
+    background-color: #1de840;
+  }
+  55% {
+    background-color: #1ddde8;
+  }
+  70% {
+    background-color: #2b1de8;
+  }
+  85% {
+    background-color: #dd00f3;
+  }
+  100% {
+    background-color: #2b1de8;
+  }
+}
+
+html {
+  font-size: 1.2vw;
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+  margin: auto;
+  -webkit-animation: rainbow 100s infinite alternate;
+  animation: rainbow 100s infinite alternate;
+  font-family: Times, serif;
+}
+
+body, footer a, button {
+  color: white;
+}
+
+#container {
+  width: 75%;
+  margin: auto;
+}
+
+#quotes, button {
+  background-color: rgba(200, 200, 200, 0.25);
+  text-shadow: 1px 1px 1px rgba(78, 78, 78, 0.2);
+  border: solid white 2px;
+}
+
+#quotes, blockquote, footer {
+padding: 1em;
+}
+
+#quotes {
+  margin: 4em auto 1em auto;
+  font-size: 2em;
+  border-radius: 10px;
+  display: block;
+  height: auto;
+  -webkit-transition: height 0.3s linear;
+  transition: height 0.3s linear;
+}
+
+blockquote {
+  margin: 0; 
+  height: auto;
+  opacity: 0;
+  -webkit-transition: opacity 1s linear;
+  transition: opacity 1s linear;
+}
+
+blockquote:before {
+  content: open-quote;
+  display: inline-block;
+  font-size: 3em;
+  margin-right: 0.1em;
+}
+
+blockquote p {
+  display: inline-block;
+  width: 90%;
+  vertical-align: top;
+  margin: 0;
+  padding: 1em 0;
+}
+
+cite:before {
+  content: "-";
+  margin-right: 0.1em;
+}
+
+cite {
+  text-align: right;
+  display: block;
+  margin-right: 1em;
+  font-size: 0.75em;
+}
+
+.buttons {
+  display: block;
+  text-align: right;
+  font-family: Arial, sans-serif;
+  margin: 0 0 3em 0;
+}
+
+#tweetBtn {
+  color: transparent;
+}
+
+.twit {
+  width: 53px;
+  cursor: pointer;
+  margin-right: 3em;
+  vertical-align: top;
+  border: solid white 2px;
+  border-radius: 50%;
+}
+
+button {
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 15.35px 30px;
+  cursor: pointer;
+  vertical-align: top;
+}
+
+footer {
+  font-family: Arial, sans-serif;
+}
+
+@media only screen and (max-width: 50em) {
+  body {
+    width: 90%;
+  }
+
+  html {
+    font-size: 2vw;
+  }
+
+  #quotes {
+    padding: 0.5em 0;
+  }
+
+  blockquote p {
+    width: 85%;
+  }
+
+  blockquote:before {
+    vertical-align: 0.7em;
+  }
+
+  cite {
+    margin-right: 0em;
+  }
+}
