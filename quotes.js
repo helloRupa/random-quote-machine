@@ -5,12 +5,12 @@ getData_42190abhy = function (response) {
         if (!response) throw "New exception";
         var authorText = response.quoteAuthor;
         var quoteText = response.quoteText;
-        quote.innerHTML = quoteText;
-        if (authorText) author.innerHTML = authorText;
-        else author.innerHTML = "Unknown";
+        quote.textContent = quoteText;
+        if (authorText) author.textContent = authorText;
+        else author.textContent = "Unknown";
     } catch (err) {
-        quote.innerHTML = "Sorry, quotes are not currently available. Please check back later.";
-        author.innerHTML = "Sad Malfunction Bear";
+        quote.textContent = "Sorry, quotes are not currently available. Please check back later.";
+        author.textContent = "Sad Malfunction Bear";
     }
 };
 
@@ -37,8 +37,8 @@ getData_42190abhy = function (response) {
         script.type = "text/javascript";
         script.src = "https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp&jsonp=getData_42190abhy";
         script.onerror = function (event) {
-            document.getElementById("quotes").getElementsByTagName("p")[0].innerHTML = "Sorry, quotes are not currently available. Please check back later.";
-            document.getElementById("quotes").getElementsByTagName("cite")[0].innerHTML ="Sad Malfunction Squatch";
+            document.getElementById("quotes").getElementsByTagName("p")[0].textContent = "Sorry, quotes are not currently available. Please check back later.";
+            document.getElementById("quotes").getElementsByTagName("cite")[0].textContent ="Sad Malfunction Squatch";
         };
         document.getElementsByTagName("head")[0].appendChild(script);
         document.getElementById("quoteScript").remove();
@@ -46,8 +46,8 @@ getData_42190abhy = function (response) {
 
     function makeTweet() {
         var tweetBtn = document.getElementById("tweetBtn");
-        var quote = document.getElementById("quotes").getElementsByTagName("p")[0].innerHTML;
-        var author = document.getElementById("quotes").getElementsByTagName("cite")[0].innerHTML;
+        var quote = document.getElementById("quotes").getElementsByTagName("p")[0].textContent;
+        var author = document.getElementById("quotes").getElementsByTagName("cite")[0].textContent;
         tweetBtn.href = 'https://twitter.com/intent/tweet?text="' + quote + '"' + " -" + author;
     }
 
