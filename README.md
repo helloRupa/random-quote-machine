@@ -8,4 +8,6 @@ Use Forismatic API to generate random quotes (HTML, CSS, JS) using vanilla JavaS
 * Color-changing background
 * Error handling for script failure or empty response
 
+See it in action here: https://codepen.io/rdhi/full/JMoQQV/
+
 _Created as part of the Free Code Camp curriculum_
