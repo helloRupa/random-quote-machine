@@ -96,8 +96,8 @@ padding: 1em;
   border-radius: 10px;
   display: block;
   height: auto;
-  -webkit-transition: height 0.3s linear;
-  transition: height 0.3s linear;
+  -webkit-transition: height 0.3s;
+  transition: height 0.3s;
 }
 
 blockquote {
