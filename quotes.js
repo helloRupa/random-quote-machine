@@ -1,21 +1,4 @@
 (function () {
-    window.onload = (function () {
-        let url = "https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp";
-        getSetHeight();
-        jsonP(url, "handleRes", showQuote);
-        fadeIn();
-        hTweet(1000);
-        document.getElementById("getNewQuote").onclick = function () {
-            getSetHeight();
-            fadeOut();
-            setTimeout(function () {
-                jsonP(url, "handleRes", showQuote);
-            }, 1000);
-            fadeIn();
-            hTweet(2100);
-        };
-    })();
-
     function showError(err) {
         let quote = document.getElementById("quotes").getElementsByTagName("p")[0];
         let author = document.getElementById("quotes").getElementsByTagName("cite")[0];
@@ -37,14 +20,14 @@
     function jsonP(url, callbackName, callbackFn) {
         let script = document.createElement("script");
         script.src = `${url}&jsonp=${callbackName}`;
-        window[callbackName] = function(response) {
+        window[callbackName] = function (response) {
             try {
                 if (!response) throw "New exception";
                 if (typeof callbackFn === "function") callbackFn(response);
             } catch (err) {
                 showError(err);
             }
-        }; 
+        };
         script.onerror = function (err) {
             showError(err);
         };
@@ -83,4 +66,21 @@
             makeTweet();
         }, time);
     }
+
+    (function () {
+        let url = "https://api.forismatic.com/api/1.0/?method=getQuote&lang=en&format=jsonp";
+        getSetHeight();
+        jsonP(url, "handleRes", showQuote);
+        fadeIn();
+        hTweet(1000);
+        document.getElementById("getNewQuote").onclick = function () {
+            getSetHeight();
+            fadeOut();
+            setTimeout(function () {
+                jsonP(url, "handleRes", showQuote);
+            }, 1000);
+            fadeIn();
+            hTweet(2100);
+        };
+    })();
 })();
