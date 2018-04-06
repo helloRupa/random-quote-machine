@@ -13,8 +13,7 @@
         let quoteText = response.quoteText.trim();
         let authorText = response.quoteAuthor.trim();
         quote.textContent = quoteText;
-        if (authorText) author.textContent = authorText;
-        else author.textContent = "Unknown";
+        author.textContent = (authorText) ? authorText : "Unknown";
     }
 
     function jsonP(url, callbackName, callbackFn) {
